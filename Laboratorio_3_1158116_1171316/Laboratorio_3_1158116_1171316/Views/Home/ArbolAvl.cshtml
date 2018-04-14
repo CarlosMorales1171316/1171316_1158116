@@ -1,0 +1,496 @@
+﻿@using Laboratorio_3_1158116_1171316.Models;
+@using Newtonsoft.Json;
+<h3></h3>
+<h2>Laboratorio # 3 - Arboles AVL</h2>
+
+<h2></h2>
+
+@Html.ActionLink("Menu Principal", "Index", "Home", null, new { atributo = "valor3", @class = "btn btn-primary" })<h3></h3>
+
+
+
+@{
+    int contador = Convert.ToInt32(Session["contador"]);
+    string tipoArbol = Convert.ToString(Session["Valor2"]);
+
+    List<string> RegistroInsertar = new List<string>();
+    Session["ListaInsertar"] = RegistroInsertar;
+
+
+    List<string> RegistroBuscar = new List<string>();
+    Session["ListaEliminar"] = RegistroBuscar;
+
+
+    List<string> RegistroEliminar = new List<string>();
+    Session["ListaEliminar"] = RegistroEliminar;
+
+
+    List<string> PARTIDOS2 = new List<string>();
+    Session["ListaPartidos"] = PARTIDOS2;
+    var path = @"C:\PARTIDOS.json";
+    var contenido = System.IO.File.ReadAllText(path);
+
+    ColectorJuegos juegos2 = JsonConvert.DeserializeObject<ColectorJuegos>(contenido);
+    string eliminar = Convert.ToString((TempData["Valor4"]));
+    string agregar = Convert.ToString((TempData["Valor3"]));
+    string buscar = Convert.ToString(TempData["Buscar"]);
+    string ejemplo = "";
+    ArbolAVL<int, Partidos> ArbolPartidos2 = new ArbolAVL<int, Partidos>();
+    List<string> logs = new List<string>();
+    tipoArbol.ToLower();
+
+
+    System.IO.Directory.CreateDirectory(@"C:\EsctructuraDatosLaboratorio3");
+    string RUTACarpeta = @"C:\EsctructuraDatosLaboratorio3";
+
+    if (contador == 0)
+    {
+        if (tipoArbol == "numero de partidos")
+        {
+            ejemplo = "ej(10)";
+            List<Partidos> lstPartidos2 = new List<Partidos>();
+            lstPartidos2.Add(juegos2.valor);
+            lstPartidos2.Add(juegos2.izquierdo.valor);
+            lstPartidos2.Add(juegos2.izquierdo.izquierdo.valor);
+            lstPartidos2.Add(juegos2.derecho.valor);
+
+            #region
+            List<int> listaNoPartidos2 = new List<int>();
+            listaNoPartidos2.Add(juegos2.valor.NoPartido);
+            listaNoPartidos2.Add(juegos2.izquierdo.valor.NoPartido);
+            listaNoPartidos2.Add(juegos2.izquierdo.izquierdo.valor.NoPartido);
+            listaNoPartidos2.Add(juegos2.derecho.valor.NoPartido);
+
+            List<string> listaFechaPartidos2 = new List<string>();
+            listaFechaPartidos2.Add(juegos2.valor.FechaPartido);
+            listaFechaPartidos2.Add(juegos2.izquierdo.valor.FechaPartido);
+            listaFechaPartidos2.Add(juegos2.izquierdo.izquierdo.valor.FechaPartido);
+            listaFechaPartidos2.Add(juegos2.derecho.valor.FechaPartido);
+
+            List<string> listaGrupos2 = new List<string>();
+            listaGrupos2.Add(juegos2.valor.Grupo);
+            listaGrupos2.Add(juegos2.izquierdo.valor.Grupo);
+            listaGrupos2.Add(juegos2.izquierdo.izquierdo.valor.Grupo);
+            listaGrupos2.Add(juegos2.derecho.valor.Grupo);
+
+            List<string> _listaPais1 = new List<string>();
+            _listaPais1.Add(juegos2.valor.Pais1);
+            _listaPais1.Add(juegos2.izquierdo.valor.Pais1);
+            _listaPais1.Add(juegos2.izquierdo.izquierdo.valor.Pais1);
+            _listaPais1.Add(juegos2.derecho.valor.Pais1);
+
+            List<string> _listaPais2 = new List<string>();
+            _listaPais2.Add(juegos2.valor.Pais2);
+            _listaPais2.Add(juegos2.izquierdo.valor.Pais2);
+            _listaPais2.Add(juegos2.izquierdo.izquierdo.valor.Pais2);
+            _listaPais2.Add(juegos2.derecho.valor.Pais2);
+
+            List<string> listaEstadios2 = new List<string>();
+            listaEstadios2.Add(juegos2.valor.Estadio);
+            listaEstadios2.Add(juegos2.izquierdo.valor.Estadio);
+            listaEstadios2.Add(juegos2.izquierdo.izquierdo.valor.Estadio);
+            listaEstadios2.Add(juegos2.derecho.valor.Estadio);
+            #endregion
+
+            for (int i = 0; i < lstPartidos2.Count; i++)
+            {
+                PARTIDOS2.Add("No Partido: " + listaNoPartidos2.ElementAt(i) + ", Fecha Partido: " + listaFechaPartidos2.ElementAt(i) +
+                    ", Grupo: " + listaGrupos2.ElementAt(i) + ", Pais 1: " + _listaPais1.ElementAt(i) + ", Pais 2: "
+                    + _listaPais2.ElementAt(i) + ", Estadio: " + listaEstadios2.ElementAt(i));
+            }
+
+
+
+
+            ArbolPartidos2.Insertar(juegos2.valor.NoPartido, juegos2.valor);
+            ArbolPartidos2.Insertar(juegos2.izquierdo.valor.NoPartido, juegos2.izquierdo.valor);
+            ArbolPartidos2.Insertar(juegos2.izquierdo.izquierdo.valor.NoPartido, juegos2.izquierdo.izquierdo.valor);
+            ArbolPartidos2.Insertar(juegos2.derecho.valor.NoPartido, juegos2.derecho.valor);
+            logs.Add("El Nodo [" + juegos2.valor.NoPartido + ", " + juegos2.valor.FechaPartido + ", " + juegos2.valor.Estadio + ", " + juegos2.valor.Pais1 + ", " + juegos2.valor.Pais2 + "] se ha ingresado al arbol AVL");
+            logs.Add("El Nodo [" + juegos2.izquierdo.valor.NoPartido + ", " + juegos2.izquierdo.valor.FechaPartido + ", " + juegos2.izquierdo.valor.Estadio + ", " + juegos2.izquierdo.valor.Pais1 + ", " + juegos2.izquierdo.valor.Pais2 + "] se ha ingresado al arbol AVL");
+            logs.Add("El Nodo [" + juegos2.izquierdo.izquierdo.valor.NoPartido + ", " + juegos2.izquierdo.izquierdo.valor.FechaPartido + ", " + juegos2.izquierdo.izquierdo.valor.Estadio + ", " + juegos2.izquierdo.izquierdo.valor.Pais1 + ", " + juegos2.izquierdo.izquierdo.valor.Pais2 + "] se ha ingresado al arbol AVL");
+            logs.Add("El Nodo [" + juegos2.derecho.valor.NoPartido + ", " + juegos2.derecho.valor.FechaPartido + ", " + juegos2.derecho.valor.Estadio + ", " + juegos2.derecho.valor.Pais1 + ", " + juegos2.derecho.valor.Pais2 + "] se ha ingresado al arbol AVL");
+        }
+
+
+        if (tipoArbol == "fecha de partidos")
+        {
+            #region
+            ejemplo = "ej(03/06/2018)";
+            List<Partidos> lstPartidos2 = new List<Partidos>();
+            lstPartidos2.Add(juegos2.valor);
+            lstPartidos2.Add(juegos2.izquierdo.valor);
+            lstPartidos2.Add(juegos2.izquierdo.izquierdo.valor);
+            lstPartidos2.Add(juegos2.derecho.valor);
+
+            #region
+            List<int> listaNoPartidos2 = new List<int>();
+            listaNoPartidos2.Add(juegos2.valor.NoPartido);
+            listaNoPartidos2.Add(juegos2.izquierdo.valor.NoPartido);
+            listaNoPartidos2.Add(juegos2.izquierdo.izquierdo.valor.NoPartido);
+            listaNoPartidos2.Add(juegos2.derecho.valor.NoPartido);
+
+            List<string> listaFechaPartidos2 = new List<string>();
+            List<int> listasFechas = new List<int>();
+            listaFechaPartidos2.Add(juegos2.valor.FechaPartido);
+            listaFechaPartidos2.Add(juegos2.izquierdo.valor.FechaPartido);
+            listaFechaPartidos2.Add(juegos2.izquierdo.izquierdo.valor.FechaPartido);
+            listaFechaPartidos2.Add(juegos2.derecho.valor.FechaPartido);
+
+            for (int i = 0; i < listaFechaPartidos2.Count; i++)
+            {
+                string[] substring = listaFechaPartidos2.ElementAt(i).Split('/');
+                string NuevaFecha = (substring[0]) + (substring[1]) + (substring[2]);
+                listasFechas.Add(Convert.ToInt32(NuevaFecha));
+            }
+
+
+
+            List<string> listaGrupos2 = new List<string>();
+            listaGrupos2.Add(juegos2.valor.Grupo);
+            listaGrupos2.Add(juegos2.izquierdo.valor.Grupo);
+            listaGrupos2.Add(juegos2.izquierdo.izquierdo.valor.Grupo);
+            listaGrupos2.Add(juegos2.derecho.valor.Grupo);
+
+            List<string> _listaPais1 = new List<string>();
+            _listaPais1.Add(juegos2.valor.Pais1);
+            _listaPais1.Add(juegos2.izquierdo.valor.Pais1);
+            _listaPais1.Add(juegos2.izquierdo.izquierdo.valor.Pais1);
+            _listaPais1.Add(juegos2.derecho.valor.Pais1);
+
+            List<string> _listaPais2 = new List<string>();
+            _listaPais2.Add(juegos2.valor.Pais2);
+            _listaPais2.Add(juegos2.izquierdo.valor.Pais2);
+            _listaPais2.Add(juegos2.izquierdo.izquierdo.valor.Pais2);
+            _listaPais2.Add(juegos2.derecho.valor.Pais2);
+
+            List<string> listaEstadios2 = new List<string>();
+            listaEstadios2.Add(juegos2.valor.Estadio);
+            listaEstadios2.Add(juegos2.izquierdo.valor.Estadio);
+            listaEstadios2.Add(juegos2.izquierdo.izquierdo.valor.Estadio);
+            listaEstadios2.Add(juegos2.derecho.valor.Estadio);
+            #endregion
+
+
+            ArbolPartidos2.Insertar(listasFechas.ElementAt(0), juegos2.valor);
+            ArbolPartidos2.Insertar(listasFechas.ElementAt(1), juegos2.izquierdo.valor);
+            ArbolPartidos2.Insertar(listasFechas.ElementAt(2), juegos2.izquierdo.izquierdo.valor);
+            ArbolPartidos2.Insertar(listasFechas.ElementAt(3), juegos2.derecho.valor);
+
+            for (int i = 0; i < lstPartidos2.Count; i++)
+            {
+
+                PARTIDOS2.Add("Fecha Partido: " + listaFechaPartidos2.ElementAt(i) + ", No Partido: " + listaNoPartidos2.ElementAt(i) +
+                  ", Grupo: " + listaGrupos2.ElementAt(i) + ", Pais 1: " + _listaPais2.ElementAt(i) + ", Pais 2: "
+                  + _listaPais2.ElementAt(i) + ", Estadio: " + listaEstadios2.ElementAt(i));
+            }
+            logs.Add("El Nodo [" + juegos2.valor.FechaPartido + ", " + juegos2.valor.NoPartido +  ", " + juegos2.valor.Estadio + ", " + juegos2.valor.Pais1 + ", " + juegos2.valor.Pais2 + "] se ha ingresado al arbol AVL");
+            logs.Add("El Nodo [" +juegos2.izquierdo.valor.FechaPartido + ", " + juegos2.izquierdo.valor.NoPartido + ", " + juegos2.izquierdo.valor.Estadio + ", " + juegos2.izquierdo.valor.Pais1 + ", " + juegos2.izquierdo.valor.Pais2 + "] se ha ingresado al arbol AVL");
+            logs.Add("El Nodo ["+ juegos2.izquierdo.izquierdo.valor.FechaPartido + ", " + juegos2.izquierdo.izquierdo.valor.NoPartido + ", " + juegos2.izquierdo.izquierdo.valor.Estadio + ", " + juegos2.izquierdo.izquierdo.valor.Pais1 + ", " + juegos2.izquierdo.izquierdo.valor.Pais2 + "] se ha ingresado al arbol AVL");
+            logs.Add("El Nodo [" + juegos2.derecho.valor.FechaPartido + ", " + juegos2.derecho.valor.NoPartido  + ", " + juegos2.derecho.valor.Estadio + ", " + juegos2.derecho.valor.Pais1 + ", " + juegos2.derecho.valor.Pais2 + "] se ha ingresado al arbol AVL");
+            #endregion
+        }
+
+        string ruta0 = @"C:\EsctructuraDatosLaboratorio3\MetodoInsercionJson.txt";
+        StreamWriter sw = new StreamWriter(ruta0, false);
+        sw.WriteLine("--------------Nuevo Nodo----------------------" + "\n");
+        sw.WriteLine();
+        foreach (var item in logs)
+        {
+            sw.WriteLine(item);
+        }
+        sw.WriteLine();
+        sw.WriteLine("--------------Metodo de balanceo --------------");
+        sw.WriteLine();
+        foreach (var item in ArbolPartidos2.lstRegistro)
+        {
+            sw.WriteLine(item);
+        }
+        sw.Close();
+
+    }
+}
+
+
+@if (tipoArbol == "numero de partidos" || tipoArbol == "fecha de partidos")
+{
+    using (Html.BeginForm("ArbolAvl", "Home"))
+    {
+        <p>
+            @Html.TextBox("insertar")
+            <br />
+            <h5>(Ingrese nodo por el campo de @tipoArbol)</h5>
+        <p></p>
+
+        <input type="submit" />
+        </p>
+
+        <p>
+            @Html.TextBox("eliminar")
+            <br />
+            <h5>(Eliminar nodo por el campo de @tipoArbol, @ejemplo)</h5>
+        <p></p>
+
+        <input type="submit" />
+        </p>
+
+        <p>
+            @Html.TextBox("buscar")
+            <br />
+            <h5>(Buscar nodo por el campo de @tipoArbol, @ejemplo)</h5>
+        <p></p>
+
+        <input type="submit" />
+        </p>
+
+    }
+}
+
+
+@if (tipoArbol != "numero de partidos" && tipoArbol != "fecha de partidos")
+{<p>No se ha ingreso ningun campo.</p>}
+
+
+@{ 
+    string cadenabuscar = "";
+    string mensaje = "";
+
+
+    if (agregar != "")
+    {
+        PARTIDOS2.Add(agregar);
+        mensaje = "nodo [" + agregar + "], fue agregado exitosamente.";
+        contador++;
+        string ruta = @"C:\EsctructuraDatosLaboratorio3\MetodoInsercionArbolAvl.txt";
+        RegistroInsertar.Add(mensaje);
+        StreamWriter sw = new StreamWriter(ruta, false);
+        sw.WriteLine("--------------Nuevo Nodo----------------------"+"\n");
+        sw.WriteLine();
+        foreach (var item in RegistroInsertar)
+        {
+            sw.WriteLine(item);
+        }
+        sw.WriteLine();
+        sw.WriteLine("--------------Metodo de balanceo --------------");
+        sw.WriteLine();
+        foreach (var item in ArbolPartidos2.lstRegistro)
+        {
+            sw.WriteLine(item);
+        }
+        sw.Close();
+
+    }
+
+    if (eliminar != "")
+    {
+
+        if (eliminar.Length == 10)
+        {
+            string EliminarNodo = eliminar.Substring(0, 2) + eliminar.Substring(3, 2) + eliminar.Substring(6, 4);
+
+            for (int i = 0; i < PARTIDOS2.Count; i++)
+            {
+                if (eliminar == PARTIDOS2.ElementAt(i).Substring(15, 10))
+                {
+                    string prueba = PARTIDOS2.ElementAt(i);
+                    PARTIDOS2.Remove(prueba);
+                    ArbolPartidos2.Eliminar(Convert.ToInt32(EliminarNodo));
+                    mensaje = "nodo [" + eliminar + "], fue eliminado exitosamente.";
+                    contador++;
+
+                    string ruta = @"C:\EsctructuraDatosLaboratorio3\MetodoEliminarArbolAvl.txt";
+                    RegistroEliminar.Add(mensaje);
+                    StreamWriter sw = new StreamWriter(ruta, false);
+                    sw.WriteLine("------------- Nodo a Eliminar -----------------" + "\n");
+                    sw.WriteLine();
+                    foreach (var item in RegistroEliminar)
+                    {
+                        sw.WriteLine(item);
+                    }
+                    sw.WriteLine();
+                    sw.WriteLine("--------------Metodo de balanceo --------------");
+                    sw.WriteLine();
+                    foreach (var item in ArbolPartidos2.lstRegistro)
+                    {
+                        sw.WriteLine(item);
+                    }
+                    sw.Close();
+
+                    break;
+                }
+
+            }
+
+        }
+    }
+
+
+    if (eliminar.Length == 2)
+    {
+        for (int i = 0; i < PARTIDOS2.Count; i++)
+        {
+            if (eliminar == PARTIDOS2.ElementAt(i).Substring(12, 2))
+            {
+                string prueba = PARTIDOS2.ElementAt(i);
+                PARTIDOS2.Remove(prueba);
+                ArbolPartidos2.Eliminar(Convert.ToInt32(eliminar));
+                contador++; ;
+                mensaje = "nodo [" + eliminar + "], fue eliminado exitosamente.";
+
+                string ruta2 = @"C:\EsctructuraDatosLaboratorio3\MetodoEliminarArbolAvl.txt";
+                RegistroEliminar.Add(mensaje);
+                StreamWriter sw = new StreamWriter(ruta2, false);
+                sw.WriteLine("------------- Nodo a Eliminar -----------------" + "\n");
+                sw.WriteLine();
+                foreach (var item in RegistroEliminar)
+                {
+                    sw.WriteLine(item);
+                }
+                sw.WriteLine();
+                sw.WriteLine("--------------Metodo de balanceo --------------");
+                sw.WriteLine();
+                foreach (var item in ArbolPartidos2.lstRegistro)
+                {
+                    sw.WriteLine(item);
+                }
+                sw.Close();
+
+                break;
+            }
+        }
+    }
+    if (eliminar.Length == 1)
+    {
+        for (int i = 0; i < PARTIDOS2.Count; i++)
+        {
+            if (eliminar == PARTIDOS2.ElementAt(i).Substring(12, 1))
+            {
+                string prueba = PARTIDOS2.ElementAt(i);
+                PARTIDOS2.Remove(prueba);
+                contador++;
+                ArbolPartidos2.Eliminar(Convert.ToInt32(eliminar));
+                mensaje = "nodo [" + eliminar + "], fue eliminado exitosamente.";
+                string ruta3 = @"C:\EsctructuraDatosLaboratorio3\MetodoEliminarArbolAvl.txt";
+                RegistroEliminar.Add(mensaje);
+                StreamWriter sw = new StreamWriter(ruta3, false);
+                sw.WriteLine("------------- Nodo a Eliminar -----------------" + "\n");
+                sw.WriteLine();
+                foreach (var item in RegistroEliminar)
+                {
+                    sw.WriteLine(item);
+                }
+                sw.WriteLine();
+                sw.WriteLine("--------------Metodo de balanceo --------------");
+                sw.WriteLine();
+                foreach (var item in ArbolPartidos2.lstRegistro)
+                {
+                    sw.WriteLine(item);
+                }
+                sw.Close();
+
+                break;
+            }
+        }
+    }
+
+    if(buscar.Length == 2)
+    {
+        cadenabuscar="El nodo ["+buscar + "], "+ ArbolPartidos2.Buscar(Convert.ToInt32(buscar), juegos2.valor);
+
+        string ruta4 = @"C:\EsctructuraDatosLaboratorio3\MetodoBuscarArbolAvl.txt";
+        RegistroBuscar.Add(cadenabuscar);
+        StreamWriter sw = new StreamWriter(ruta4, false);
+        sw.WriteLine("-------------Nodo a Buscar------------------"+ "\n");
+        sw.WriteLine();
+        foreach (var item in RegistroBuscar)
+        {
+            sw.WriteLine(item);
+        }
+        sw.WriteLine();
+        sw.WriteLine("--------------Metodo de balanceo --------------");
+        sw.WriteLine();
+        foreach (var item in ArbolPartidos2.lstRegistro)
+        {
+            sw.WriteLine(item);
+        }
+        sw.Close();
+    }
+    if(buscar.Length == 1)
+    {
+        cadenabuscar = "El nodo [" + buscar + "], " + ArbolPartidos2.Buscar(Convert.ToInt32(buscar), juegos2.valor);
+        string ruta4 = @"C:\EsctructuraDatosLaboratorio3\MetodoBuscarArbolAvl.txt";
+        RegistroBuscar.Add(cadenabuscar);
+        StreamWriter sw = new StreamWriter(ruta4, false);
+        sw.WriteLine("-------------Nodo a Buscar------------------" + "\n");
+        sw.WriteLine();
+        foreach (var item in RegistroBuscar)
+        {
+            sw.WriteLine(item);
+        }
+        sw.WriteLine();
+        sw.WriteLine("--------------Metodo de balanceo --------------");
+        sw.WriteLine();
+        foreach (var item in ArbolPartidos2.lstRegistro)
+        {
+            sw.WriteLine(item);
+        }
+        sw.Close();
+    }
+    if (buscar.Length == 10)
+    {
+        string EncontrarNodo = buscar.Substring(0, 2) + buscar.Substring(3, 2) + buscar.Substring(6, 4);
+        cadenabuscar = "El nodo [" + buscar + "], " + ArbolPartidos2.Buscar(Convert.ToInt32(buscar), juegos2.valor);
+        string ruta4 = @"C:\EsctructuraDatosLaboratorio3\MetodoBuscarArbolAvl.txt";
+        RegistroBuscar.Add(cadenabuscar);
+        StreamWriter sw = new StreamWriter(ruta4, false);
+        sw.WriteLine("-------------Nodo a Buscar------------------" + "\n");
+        sw.WriteLine();
+        foreach (var item in RegistroBuscar)
+        {
+            sw.WriteLine(item);
+        }
+        sw.WriteLine();
+        sw.WriteLine("--------------Metodo de balanceo --------------");
+        sw.WriteLine();
+        foreach (var item in ArbolPartidos2.lstRegistro)
+        {
+            sw.WriteLine(item);
+        }
+        sw.Close();
+    }
+
+    System.Diagnostics.Process.Start(RUTACarpeta);
+
+}
+
+
+@if (tipoArbol == "numero de partidos" || tipoArbol == "fecha de partidos")
+{
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Arbol AVL, creado por campo de @tipoArbol </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in PARTIDOS2)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+}
+
+<h5>@mensaje</h5>
+<h5></h5>
+<h3>@cadenabuscar</h3>
+
+

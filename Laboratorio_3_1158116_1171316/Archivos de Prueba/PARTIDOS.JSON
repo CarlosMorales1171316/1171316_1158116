@@ -1,0 +1,44 @@
+{
+  "valor": {
+    "NoPartido": 10,
+    "FechaPartido": "01/01/2018",
+    "Grupo": "A",
+    "Pais1": "España",
+    "Pais2": "Marruecos",
+    "Estadio": "Mateo Flores"
+  },
+  "izquierdo": {
+    "valor": {
+      "NoPartido": 5,
+      "FechaPartido": "02/01/2018",
+      "Grupo": "A",
+      "Pais1": "España",
+      "Pais2": "Marruecos",
+      "Estadio": "Mateo Flores"
+    },
+    "izquierdo": {
+      "valor": {
+        "NoPartido": 3,
+        "FechaPartido": "04/01/2018",
+        "Grupo": "A",
+        "Pais1": "España",
+        "Pais2": "Marruecos",
+        "Estadio": "Mateo Flores"
+      },
+      "izquierdo": null,
+      "derecho": null
+    }
+  },
+  "derecho": {
+    "valor": {
+      "NoPartido": 15,
+      "FechaPartido": "03/01/2018",
+      "Grupo": "A",
+      "Pais1": "BRASIL",
+      "Pais2": "EEUU",
+      "Estadio": "Mateo Flores"
+    },
+    "izquierdo": null,
+    "derecho": null
+  }
+}

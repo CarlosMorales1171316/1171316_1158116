@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Menu de Opciones";
+}
+@{
+    ViewBag.Message = "Laboratorio # 3 - Arboles AVL";
+}
+<h2>Laboratorio # 3 - Arboles AVL</h2>
+<h2></h2>
+
+<p>Opciones de campos para crear arbol avl: [numero de partidos] o [fecha de partidos]</p>
+<h4> </h4>
+@using (Html.BeginForm("Index", "Home"))
+{
+    <p>
+        @Html.TextBox("cadena")
+        <br />
+        <h5>Ingrese campo...</h5>
+    <p></p>
+
+    <input type="submit" />
+    </p>
+}
+
+@{
+    string TipoArbol = Convert.ToString(Session["Valor2"]);
+    TipoArbol.ToLower();
+    string respuesta = "";
+    if (TipoArbol.ToLower() == "numero de partidos" || TipoArbol.ToLower() == "fecha de partidos")
+    {
+        respuesta = "Arbol creado exitosamente por el campo de " + TipoArbol.ToLower();
+    }
+
+    if (TipoArbol != "")
+    {
+        if (TipoArbol.ToLower() != "numero de partidos" || TipoArbol.ToLower() != "fecha de partidos")
+        {
+            respuesta = "No se ha ingresado ningun campo.";
+        }
+    }
+}
+
+
+
+<h5></h5>
+<h5>@respuesta</h5>
+
