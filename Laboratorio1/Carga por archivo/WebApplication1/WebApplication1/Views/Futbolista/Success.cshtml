@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Success</title>
+</head>
+<body>
+    <h3>MLS Salaries</h3>
+    <table cellpadding="2" cellspacing="2"border="1">
+        <tr>    
+            <th>Club</th>
+            <th>Apellido</th>
+            <th>Nombre</th>
+            <th>Posicion</th>
+            <th>Salario</th>
+            <th>Compensacion</th>
+        </tr>
+        @foreach(var jugador in ViewBag.ListaFutbolistas)
+        {
+            <tr>
+                <td>@jugador.club</td>
+                <td>@jugador.lastName </td>
+                <td>@jugador.firstName</td>
+                <td>@jugador.position</td>
+                <td>@jugador.baseSalary</td>
+                <td>@jugador.guaranteedCompensation</td>
+            </tr>
+        }
+        </table>
+</body>
+</html>

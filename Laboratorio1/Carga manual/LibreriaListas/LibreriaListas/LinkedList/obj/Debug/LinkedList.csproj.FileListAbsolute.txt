@@ -1,0 +1,6 @@
+C:\Users\ivana\Downloads\LibreriaListas\LibreriaListas\LinkedList\bin\Debug\LinkedList.dll
+C:\Users\ivana\Downloads\LibreriaListas\LibreriaListas\LinkedList\bin\Debug\LinkedList.pdb
+C:\Users\ivana\Downloads\LibreriaListas\LibreriaListas\LinkedList\obj\Debug\LinkedList.csprojResolveAssemblyReference.cache
+C:\Users\ivana\Downloads\LibreriaListas\LibreriaListas\LinkedList\obj\Debug\LinkedList.csproj.CoreCompileInputs.cache
+C:\Users\ivana\Downloads\LibreriaListas\LibreriaListas\LinkedList\obj\Debug\LinkedList.dll
+C:\Users\ivana\Downloads\LibreriaListas\LibreriaListas\LinkedList\obj\Debug\LinkedList.pdb

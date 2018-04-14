@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebApplication1.Models.Futbolista>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br><br /><br><br />
+
+    <body>
+        @using (Html.BeginForm("Importar", "Futbolista", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.Raw(ViewBag.Error)
+            <span>Archivo </span><input type="file" name="excelfile" />       
+            <br />
+            <input type="submit" name="Importar" />
+        }
+             
+</body>
+<br><br />
+<br><br />
+

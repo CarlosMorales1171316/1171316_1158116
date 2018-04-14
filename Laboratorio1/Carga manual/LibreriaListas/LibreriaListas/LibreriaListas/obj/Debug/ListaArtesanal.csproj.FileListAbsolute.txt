@@ -1,0 +1,2 @@
+C:\Users\ivana\Downloads\LibreriaListas\LibreriaListas\LibreriaListas\obj\Debug\ListaArtesanal.csprojResolveAssemblyReference.cache
+C:\Users\ivana\Downloads\LibreriaListas\LibreriaListas\LibreriaListas\obj\Debug\ListaArtesanal.csproj.CoreCompileInputs.cache
