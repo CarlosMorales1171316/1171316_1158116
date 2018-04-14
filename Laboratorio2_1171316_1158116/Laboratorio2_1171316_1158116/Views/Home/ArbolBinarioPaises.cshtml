@@ -1,0 +1,357 @@
+﻿@using Laboratorio2_1171316_1158116.Models;
+@using System.Web.Mvc;
+@using Newtonsoft.Json;
+<h2>Arbol Binario tipo Pais</h2>
+@{
+
+    //dataPaises
+    ArbolBinario<Pais> ArbolPaises = new ArbolBinario<Pais>();
+    var path = @"C:\dataPaises.json";
+    var contenido = System.IO.File.ReadAllText(path);
+    ColectorPais paises = JsonConvert.DeserializeObject<ColectorPais>(contenido);
+    List<ColectorPais> lstPaises = new List<ColectorPais>();
+    List<string> lstNombres = new List<string>();
+    List<string> lstGrupos = new List<string>();
+    lstPaises.Add(paises);
+    List<string> MundialRusia = new List<string>();
+    List<string> lstPreOrden = new List<string>();
+    List<string> lstInOrden = new List<string>();
+    List<string> lstPostOrden = new List<string>();
+
+    //viendo como se deserializa el json paso por paso (por breakpoints)
+    #region
+    lstNombres.Add(paises.valor.nombre);
+    lstNombres.Add(paises.izquierdo.valor.nombre);
+    lstNombres.Add(paises.izquierdo.izquierdo.valor.nombre);
+    lstNombres.Add(paises.izquierdo.derecho.valor.nombre);
+    lstNombres.Add(paises.derecho.valor.nombre);
+    lstNombres.Add(paises.derecho.izquierdo.valor.nombre);
+    lstNombres.Add(paises.derecho.derecho.valor.nombre);
+    lstNombres.Add(paises.derecho.derecho.izquierdo.valor.nombre);
+    lstNombres.Add(paises.derecho.derecho.derecho.valor.nombre);
+    lstNombres.Add(paises.derecho.derecho.derecho.izquierdo.valor.nombre);
+
+    lstGrupos.Add(paises.valor.Grupo);
+    lstGrupos.Add(paises.izquierdo.valor.Grupo);
+    lstGrupos.Add(paises.izquierdo.izquierdo.valor.Grupo);
+    lstGrupos.Add(paises.izquierdo.derecho.valor.Grupo);
+    lstGrupos.Add(paises.derecho.valor.Grupo);
+    lstGrupos.Add(paises.derecho.izquierdo.valor.Grupo);
+    lstGrupos.Add(paises.derecho.derecho.valor.Grupo);
+    lstGrupos.Add(paises.derecho.derecho.izquierdo.valor.Grupo);
+    lstGrupos.Add(paises.derecho.derecho.derecho.valor.Grupo);
+    lstGrupos.Add(paises.derecho.derecho.derecho.izquierdo.valor.Grupo);
+
+
+
+    #endregion
+
+    //insertando nodos json al arbol binario de tipo objeto Pais
+    #region
+    Nodo<Pais> nuevo = new Nodo<Pais>(paises.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.izquierdo.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.izquierdo.izquierdo.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.izquierdo.derecho.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.derecho.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.derecho.izquierdo.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.derecho.derecho.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.derecho.derecho.izquierdo.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.derecho.derecho.derecho.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    nuevo = new Nodo<Pais>(paises.derecho.derecho.derecho.izquierdo.valor, ArbolPaises.CompararPaises);
+    ArbolPaises.Insertar(nuevo);
+    List<string> list = new List<string>();
+    for (int i = 0; i < lstGrupos.Count; i++)
+    {
+        list.Add("Equipo: " + lstNombres.ElementAt(i) + ", Grupo: " + lstGrupos.ElementAt(i));
+    }
+    #endregion
+
+
+    #region
+
+    System.IO.Directory.CreateDirectory(@"C:\EsctructuraDatos");
+    string ruta = @"C:\EsctructuraDatos\OrdenesArbolPaises.txt";
+    StreamWriter sw = new StreamWriter(ruta, false);
+
+    // Imprimir Pre Orden
+    #region
+    ArbolPaises.PreOrden(ArbolPaises.RecorrerPais);
+    sw.WriteLine("PreOrden Arbol Pais");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolPaises.OrdenesPaises.Count; i++)
+    {
+        sw.WriteLine(ArbolPaises.OrdenesPaises.ElementAt(i));
+        lstPreOrden.Add(ArbolPaises.OrdenesPaises.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolPaises.OrdenesPaises.Clear();
+    #endregion
+
+    // Imprimir In Orden
+    #region
+    ArbolPaises.InOrden(ArbolPaises.RecorrerPais);
+    sw.WriteLine("InOrden Arbol Pais");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolPaises.OrdenesPaises.Count; i++)
+    {
+        sw.WriteLine(ArbolPaises.OrdenesPaises.ElementAt(i));
+        lstInOrden.Add(ArbolPaises.OrdenesPaises.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolPaises.OrdenesPaises.Clear();
+    #endregion
+
+    // Imprimir Post orden
+    #region
+    ArbolPaises.PostOrden(ArbolPaises.RecorrerPais);
+    sw.WriteLine("PostOrden Arbol Pais");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolPaises.OrdenesPaises.Count; i++)
+    {
+        sw.WriteLine(ArbolPaises.OrdenesPaises.ElementAt(i));
+        lstPostOrden.Add(ArbolPaises.OrdenesPaises.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolPaises.OrdenesPaises.Clear();
+    #endregion
+
+    #endregion
+    sw.Close();
+
+    string arbolbalanceado = ArbolPaises.ArbolBalanceado(ArbolPaises.izquierdo, ArbolPaises.derecho);
+}
+
+
+<h2> </h2>
+@Html.ActionLink("Menu Principal", "Index", "Home", null, new { atributo = "valor3", @class = "btn btn-primary" })
+
+
+<div>
+    <h4> </h4>
+    @using (Html.BeginForm("ArbolBinarioPaises", "Home"))
+    {
+        <p>
+            @Html.TextBox("texto3")
+            <br />
+        <p>Ingrese el nombre de pais que desea eliminar</p>
+        <p></p>
+
+        <input type="submit" />
+        </p>
+        <p>
+            @Html.TextBox("texto4")
+            <br />
+        <p>Ingrese nombre de grupo que desea eliminar</p>
+        <p></p>
+
+        <input type="submit" />
+        </p>
+    }
+    @{
+        Laboratorio2_1171316_1158116.Controllers.HomeController controllers = new Laboratorio2_1171316_1158116.Controllers.HomeController();
+
+
+        string name = Convert.ToString(TempData["Valor3"]);
+        string group = Convert.ToString(TempData["Valor4"]);
+
+        bool condicion = false;
+        string validarnodo = "";
+
+
+        Pais PaisCreadoPorUser = new Pais();
+        PaisCreadoPorUser.Grupo = group;
+        PaisCreadoPorUser.nombre = name;
+
+        ColectorPais nuevoPais = new ColectorPais();
+        nuevoPais.valor = PaisCreadoPorUser;
+
+        for (int i = 0; i < lstNombres.Count; i++)
+        {
+            if (lstNombres.ElementAt(i) == name)
+            {
+                if (lstGrupos.ElementAt(i) == group)
+                {
+                    ArbolPaises.Eliminar(nuevoPais.valor);
+                    lstNombres.Remove(name);
+                    lstGrupos.Remove(group);
+                    list.Remove("Equipo: " + name + ", Grupo: " + group);
+                    condicion = true;
+                    break;
+                }
+            }
+            else
+            {
+                condicion = false;
+            }
+        }
+
+        if (condicion == true)
+        {
+            lstPreOrden.Clear();
+            lstInOrden.Clear();
+            lstPostOrden.Clear();
+            ArbolPaises.OrdenesPaises.Clear();
+
+            ArbolPaises.PreOrden(ArbolPaises.RecorrerPais);
+
+            for (int i = 0; i < ArbolPaises.OrdenesPaises.Count; i++)
+            {
+                lstPreOrden.Add(ArbolPaises.OrdenesPaises.ElementAt(i));
+            }
+            ArbolPaises.OrdenesPaises.Clear();
+
+            ArbolPaises.InOrden(ArbolPaises.RecorrerPais);
+
+            for (int i = 0; i < ArbolPaises.OrdenesPaises.Count; i++)
+            {
+                lstInOrden.Add(ArbolPaises.OrdenesPaises.ElementAt(i));
+            }
+
+            ArbolPaises.OrdenesPaises.Clear();
+
+            ArbolPaises.PostOrden(ArbolPaises.RecorrerPais);
+
+            for (int i = 0; i < ArbolPaises.OrdenesPaises.Count; i++)
+            {
+                lstPostOrden.Add(ArbolPaises.OrdenesPaises.ElementAt(i));
+            }
+
+
+            validarnodo = "valores borrados exitosamente";
+
+        }
+        else
+        {
+            validarnodo = "Valores No encontrados en la base de datos.";
+        }
+
+      
+
+    }
+ 
+<div>
+    <p> @validarnodo </p>
+    <h4> </h4>
+    <div>
+        @arbolbalanceado</>
+        <h3></h3>
+    </div>
+</div>
+
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Rusia Mundial 2018 </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in list)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<div>
+    <h5></h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Pre Orden </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in lstPreOrden)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<div>
+    <h5></h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> In Orden </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in lstInOrden)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<div>
+    <h5></h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Post Orden </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in lstPostOrden)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Archivo json</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            <tr>
+                <td>
+                    @contenido
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+

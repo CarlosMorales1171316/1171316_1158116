@@ -1,0 +1,146 @@
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\ApplicationInsights.config
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.dll.config
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.pdb
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Antlr3.Runtime.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Web.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Newtonsoft.Json.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Helpers.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Mvc.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Optimization.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Razor.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Razor.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\WebGrease.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Helpers.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Mvc.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Optimization.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Razor.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Razor.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Antlr3.Runtime.pdb
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Newtonsoft.Json.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Web.xml
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Helpers.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Mvc.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Optimization.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Razor.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.csprojResolveAssemblyReference.cache
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.csproj.CoreCompileInputs.cache
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.dll
+C:\Users\ivana\OneDrive\Escritorio\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.pdb
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\ApplicationInsights.config
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.dll.config
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.pdb
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Antlr3.Runtime.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Web.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Newtonsoft.Json.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Helpers.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Mvc.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Optimization.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Razor.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Razor.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\WebGrease.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Helpers.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Mvc.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Optimization.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Razor.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Razor.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Antlr3.Runtime.pdb
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Newtonsoft.Json.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Web.xml
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Helpers.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Mvc.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Optimization.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Razor.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.csprojResolveAssemblyReference.cache
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.csproj.CoreCompileInputs.cache
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.dll
+C:\Users\ivana\OneDrive\Escritorio\Estructura de datos 1\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.pdb
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\ApplicationInsights.config
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.dll.config
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Laboratorio2_1171316_1158116.pdb
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Antlr3.Runtime.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Web.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.ApplicationInsights.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Newtonsoft.Json.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Helpers.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Mvc.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Optimization.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Razor.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Deployment.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Razor.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\WebGrease.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Helpers.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Mvc.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Optimization.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.Razor.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Deployment.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\System.Web.WebPages.Razor.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Antlr3.Runtime.pdb
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Newtonsoft.Json.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.ApplicationInsights.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\Microsoft.AI.Web.xml
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Helpers.resources.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Mvc.resources.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Optimization.resources.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.Razor.resources.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.resources.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.csprojResolveAssemblyReference.cache
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.dll
+C:\Users\CHARLIE-PC\Desktop\Laboratorio2_1171316_1158116\Laboratorio2_1171316_1158116\obj\Debug\Laboratorio2_1171316_1158116.pdb

@@ -1,0 +1,311 @@
+﻿@using Laboratorio2_1171316_1158116.Models;
+@using System.Web.Mvc;
+@using Newtonsoft.Json;
+
+
+@{
+    //dataCadenas
+    ArbolBinario<string> ArbolCadenas = new ArbolBinario<string>();
+    var path3 = @"C:\datacadenas.json";
+    var contenido3 = System.IO.File.ReadAllText(path3);
+    ColectorCadenas cadenas = JsonConvert.DeserializeObject<ColectorCadenas>(contenido3);
+    List<ColectorCadenas> lstCadenas = new List<ColectorCadenas>();
+    List<string> listCadenas = new List<string>();
+
+    #region
+    listCadenas.Add(cadenas.valor);
+    listCadenas.Add(cadenas.izquierdo.valor);
+    listCadenas.Add(cadenas.izquierdo.izquierdo.valor);
+    listCadenas.Add(cadenas.izquierdo.derecho.valor);
+    listCadenas.Add(cadenas.derecho.valor);
+    listCadenas.Add(cadenas.derecho.izquierdo.valor);
+    listCadenas.Add(cadenas.derecho.derecho.valor);
+    listCadenas.Add(cadenas.derecho.derecho.izquierdo.valor);
+    listCadenas.Add(cadenas.derecho.derecho.derecho.valor);
+    listCadenas.Add(cadenas.derecho.derecho.derecho.izquierdo.valor);
+
+    //insertando nodos json al arbol binario de tipo cadena
+    Nodo<string> nuevoCadena = new Nodo<string>(cadenas.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.izquierdo.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.izquierdo.izquierdo.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.izquierdo.derecho.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.derecho.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.derecho.izquierdo.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.derecho.derecho.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.derecho.derecho.izquierdo.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.derecho.derecho.derecho.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    nuevoCadena = new Nodo<string>(cadenas.derecho.derecho.derecho.izquierdo.valor, ArbolCadenas.CompararCadenas);
+    ArbolCadenas.Insertar(nuevoCadena);
+    #endregion
+
+    #region
+    List<string> lstPreOrden = new List<string>();
+    List<string> lstInOrden = new List<string>();
+    List<string> lstPostOrden = new List<string>();
+
+    System.IO.Directory.CreateDirectory(@"C:\EsctructuraDatos");
+    string ruta = @"C:\EsctructuraDatos\OrdenesArbolCadenas.txt";
+    StreamWriter sw = new StreamWriter(ruta, false);
+
+    // Imprimir Pre Orden
+    #region
+    ArbolCadenas.PreOrden(ArbolCadenas.RecorrerCadena);
+    sw.WriteLine("PreOrden Arbol Cadena");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolCadenas.OrdenesCadenas.Count; i++)
+    {
+        sw.WriteLine(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+        lstPreOrden.Add(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolCadenas.OrdenesCadenas.Clear();
+    #endregion
+
+    // Imprimir In Orden
+    #region
+    ArbolCadenas.InOrden(ArbolCadenas.RecorrerCadena);
+    sw.WriteLine("InOrden Arbol Cadena");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolCadenas.OrdenesCadenas.Count; i++)
+    {
+        sw.WriteLine(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+        lstInOrden.Add(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolCadenas.OrdenesCadenas.Clear();
+    #endregion
+
+    // Imprimir Post orden
+
+    #region
+    ArbolCadenas.PostOrden(ArbolCadenas.RecorrerCadena);
+    sw.WriteLine("PostOrden Arbol Cadena");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolCadenas.OrdenesCadenas.Count; i++)
+    {
+        sw.WriteLine(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+        lstPostOrden.Add(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolCadenas.OrdenesCadenas.Clear();
+
+    #endregion
+
+    sw.Close();
+
+
+    #endregion
+
+
+    string arbolbalanceado = (ArbolCadenas.ArbolBalanceado(ArbolCadenas.izquierdo, ArbolCadenas.derecho));
+}
+
+<h2>Arbol Binario Cadenas</h2>
+
+<h2> </h2>
+@Html.ActionLink("Menu Principal", "Index", "Home", null, new { atributo = "valor3", @class = "btn btn-primary" })
+
+<div>
+    <h4> </h4>
+    @using (Html.BeginForm("ArbolBinarioCadena", "Home"))
+    {
+        <p>
+            @Html.TextBox("texto2")
+            <br />
+        <p>Ingrese nodo a eliminar</p>
+        <p></p>
+
+        <input type="submit" />
+        </p>
+    }
+    @{
+        Laboratorio2_1171316_1158116.Controllers.HomeController controllers = new Laboratorio2_1171316_1158116.Controllers.HomeController();
+
+        string validarnodo = "";
+        string nodoEliminar = Convert.ToString(TempData["Valor2"]);
+        bool condicion = false;
+
+        for (int i = 0; i < listCadenas.Count; i++)
+        {
+            if (listCadenas.ElementAt(i) == nodoEliminar)
+            {
+                listCadenas.Remove(nodoEliminar);
+                ArbolCadenas.Eliminar(nodoEliminar);
+                condicion = true;
+                break;
+            }
+            else
+            {
+                condicion = false;
+            }
+
+        }
+
+        if (condicion == true)
+        {
+
+            lstPreOrden.Clear();
+            lstInOrden.Clear();
+            lstPostOrden.Clear();
+            ArbolCadenas.OrdenesCadenas.Clear();
+
+            ArbolCadenas.PreOrden(ArbolCadenas.RecorrerCadena);
+
+            for (int i = 0; i < ArbolCadenas.OrdenesCadenas.Count; i++)
+            {
+                lstPreOrden.Add(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+            }
+            ArbolCadenas.OrdenesCadenas.Clear();
+
+            ArbolCadenas.InOrden(ArbolCadenas.RecorrerCadena);
+
+            for (int i = 0; i < ArbolCadenas.OrdenesCadenas.Count; i++)
+            {
+                lstInOrden.Add(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+            }
+
+            ArbolCadenas.OrdenesCadenas.Clear();
+
+            ArbolCadenas.PostOrden(ArbolCadenas.RecorrerCadena);
+
+            for (int i = 0; i < ArbolCadenas.OrdenesCadenas.Count; i++)
+            {
+                lstPostOrden.Add(ArbolCadenas.OrdenesCadenas.ElementAt(i));
+            }
+
+
+            validarnodo = "valor borrado exitosamente";
+
+        }
+        else
+        {
+            validarnodo = "no se encuentra disponible el valor " + nodoEliminar;
+        }
+
+
+    }
+        <div>
+            <p> @validarnodo </p>
+            <h4> </h4>
+            <div>
+                @arbolbalanceado</>
+                <h3></h3>
+            </div>
+        </div>
+
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>  Valores Cadena </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in listCadenas)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+    <div>
+        <h5></h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Pre Orden </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lstPreOrden)
+                {
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <h5></h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> In Orden </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lstInOrden)
+                {
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <h5></h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Post Orden </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lstPostOrden)
+                {
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Archivo json</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr>
+                    <td>
+                        @contenido3
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+

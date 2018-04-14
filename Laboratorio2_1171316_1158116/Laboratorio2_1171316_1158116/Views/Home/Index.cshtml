@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Menu de Opciones";
+}
+@{
+    ViewBag.Message = "Laboratorio # 2";
+}
+<h2>Laboratorio # 2</h2>
+<h4></h4>
+<h5>Escoja la opcion que guste...</h5>
+
+<h4> </h4>
+@Html.ActionLink("Arbol Binario tipo pais", "ArbolBinarioPaises", "Home", null, new { atributo = "valor2", @class = "btn btn-primary" })
+
+<h4> </h4>
+@Html.ActionLink("Arbol Binario Entero", "ArbolBinarioEnteros", "Home", null, new { atributo = "valor1", @class = "btn btn-primary" })
+<h4> </h4>
+@Html.ActionLink("Arbol Binario Cadena", "ArbolBinarioCadena", "Home", null, new { atributo = "valor3", @class = "btn btn-primary" })
+

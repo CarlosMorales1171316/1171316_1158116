@@ -1,0 +1,41 @@
+{
+	"valor": "Mexico",
+	"izquierdo": {
+		"valor": "Senegal",
+		"izquierdo": {
+			"valor": "Zambia",
+			"izquierdo": null,
+			"derecho": null
+		},
+		"derecho": {
+			"valor": "Portugal",
+			"izquierdo": null,
+			"derecho": null
+		}
+	},
+	"derecho": {
+		"valor": "Finlandia",
+		"izquierdo": {
+			"valor": "Kuwait",
+			"izquierdo": null,
+			"derecho": null
+		},
+		"derecho": {
+			"valor": "Cuba",
+			"izquierdo": {
+				"valor": "Dinamarca",
+				"izquierdo": null,
+				"derecho": null
+			},
+			"derecho": {
+				"valor": "Bolivia",
+				"izquierdo": {
+					"valor": "Brasil",
+					"izquierdo": null,
+					"derecho": null
+				},
+				"derecho": null
+			}
+		}
+	}
+}

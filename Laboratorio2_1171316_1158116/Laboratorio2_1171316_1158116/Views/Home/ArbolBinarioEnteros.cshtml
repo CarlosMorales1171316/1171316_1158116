@@ -1,0 +1,322 @@
+﻿@using Laboratorio2_1171316_1158116.Models;
+@using System.Web.Mvc;
+@using Newtonsoft.Json;
+
+<h1>Arbol Binario Enteros </h1>
+@{
+
+
+    #region
+    //dataEnteros
+    ArbolBinario<int> ArbolEnteros = new ArbolBinario<int>();
+    var path2 = @"C:\dataEnteros.json";
+    var contenido2 = System.IO.File.ReadAllText(path2);
+    ColectorEnteros enteros = JsonConvert.DeserializeObject<ColectorEnteros>(contenido2);
+    List<ColectorEnteros> lstEnteros = new List<ColectorEnteros>();
+    List<int> lstValores = new List<int>();
+
+    lstEnteros.Add(enteros);
+    lstValores.Add(enteros.valor);
+    lstValores.Add(enteros.izquierdo.valor);
+    lstValores.Add(enteros.izquierdo.izquierdo.valor);
+    lstValores.Add(enteros.izquierdo.derecho.valor);
+    lstValores.Add(enteros.derecho.valor);
+    lstValores.Add(enteros.derecho.izquierdo.valor);
+    lstValores.Add(enteros.derecho.derecho.valor);
+    lstValores.Add(enteros.derecho.izquierdo.valor);
+    lstValores.Add(enteros.derecho.derecho.derecho.valor);
+    lstValores.Add(enteros.derecho.derecho.derecho.izquierdo.valor);
+
+    //insertando nodos json al arbol binario de tipo entero
+    Nodo<int> nuevoEntero = new Nodo<int>(enteros.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.izquierdo.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.izquierdo.izquierdo.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.izquierdo.derecho.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.derecho.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.derecho.izquierdo.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.derecho.derecho.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.derecho.izquierdo.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.derecho.derecho.derecho.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    nuevoEntero = new Nodo<int>(enteros.derecho.derecho.derecho.izquierdo.valor, ArbolEnteros.CompararNumeros);
+    ArbolEnteros.Insertar(nuevoEntero);
+    #endregion
+
+
+    #region
+    List<string> lstPreOrden = new List<string>();
+    List<string> lstInOrden = new List<string>();
+    List<string> lstPostOrden = new List<string>();
+
+    System.IO.Directory.CreateDirectory(@"C:\EsctructuraDatos");
+    string ruta = @"C:\EsctructuraDatos\OrdenesArbolEntero.txt";
+    StreamWriter sw = new StreamWriter(ruta, false);
+
+    // Imprimir Pre Orden
+    #region
+    ArbolEnteros.PreOrden(ArbolEnteros.RecorrerNumero);
+    sw.WriteLine("PreOrden Arbol Entero");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolEnteros.OrdenesEnteros.Count; i++)
+    {
+        sw.WriteLine(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+        lstPreOrden.Add(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolEnteros.OrdenesEnteros.Clear();
+    #endregion
+
+    // Imprimir In Orden
+    #region
+    ArbolEnteros.InOrden(ArbolEnteros.RecorrerNumero);
+    sw.WriteLine("InOrden Arbol Entero");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolEnteros.OrdenesEnteros.Count; i++)
+    {
+        sw.WriteLine(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+        lstInOrden.Add(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolEnteros.OrdenesEnteros.Clear();
+    #endregion
+
+    // Imprimir Post orden
+
+    #region
+    ArbolEnteros.PostOrden(ArbolEnteros.RecorrerNumero);
+    sw.WriteLine("PostOrden Arbol Entero");
+    sw.WriteLine("-------------------------------------------------------------------");
+    for (int i = 0; i < ArbolEnteros.OrdenesEnteros.Count; i++)
+    {
+        sw.WriteLine(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+        lstPostOrden.Add(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+    }
+    sw.WriteLine("\n" + "-------------------------------------------------------------------");
+    ArbolEnteros.OrdenesEnteros.Clear();
+
+    #endregion
+
+    sw.Close();
+
+
+    #endregion
+
+    string arbolbalanceado = ArbolEnteros.ArbolBalanceado(ArbolEnteros.izquierdo, ArbolEnteros.derecho);
+
+
+}
+
+<h2> </h2>
+@Html.ActionLink("Menu Principal", "Index", "Home", null, new { atributo = "valor3", @class = "btn btn-primary" })
+
+<div>
+    <h4> </h4>
+    @using (Html.BeginForm("ArbolBinarioEnteros", "Home"))
+    {
+        <p>
+            @Html.TextBox("texto1")
+            <br />
+        <p>Ingrese nodo a eliminar</p>
+        <p></p>
+
+        <input type="submit" />
+        </p>
+
+    }
+
+    @{
+
+
+        Laboratorio2_1171316_1158116.Controllers.HomeController controllers = new Laboratorio2_1171316_1158116.Controllers.HomeController();
+
+
+        string validarnodo = "";
+        int nodoEliminar = Convert.ToInt32(TempData["Valor1"]);
+        bool condicion = false;
+
+        for (int i = 0; i < lstValores.Count; i++)
+        {
+            if (lstValores.ElementAt(i) == nodoEliminar)
+            {
+                lstValores.Remove(nodoEliminar);
+                ArbolEnteros.Eliminar(nodoEliminar);
+                condicion = true;
+                break;
+            }
+            else
+            {
+                condicion = false;
+            }
+
+        }
+
+        if (condicion == true)
+        {
+
+            lstPreOrden.Clear();
+            lstInOrden.Clear();
+            lstPostOrden.Clear();
+            ArbolEnteros.OrdenesEnteros.Clear();
+
+            ArbolEnteros.PreOrden(ArbolEnteros.RecorrerNumero);
+
+            for (int i = 0; i < ArbolEnteros.OrdenesEnteros.Count; i++)
+            {
+                lstPreOrden.Add(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+            }
+            ArbolEnteros.OrdenesEnteros.Clear();
+
+            ArbolEnteros.InOrden(ArbolEnteros.RecorrerNumero);
+
+            for (int i = 0; i < ArbolEnteros.OrdenesEnteros.Count; i++)
+            {
+                lstInOrden.Add(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+            }
+
+            ArbolEnteros.OrdenesEnteros.Clear();
+
+            ArbolEnteros.PostOrden(ArbolEnteros.RecorrerNumero);
+
+            for (int i = 0; i < ArbolEnteros.OrdenesEnteros.Count; i++)
+            {
+                lstPostOrden.Add(ArbolEnteros.OrdenesEnteros.ElementAt(i));
+            }
+
+
+            validarnodo = "valor borrado exitosamente";
+
+        }
+        else
+        {
+            validarnodo = "no se encuentra disponible el valor " + nodoEliminar;
+        }
+
+        arbolbalanceado = ArbolEnteros.ArbolBalanceado(ArbolEnteros.izquierdo, ArbolEnteros.derecho);
+    }
+
+
+
+    <div>
+        <p> @validarnodo </p>
+        <h4> </h4>
+        <div>
+            @arbolbalanceado</>
+            <h3></h3>
+        </div>
+    </div>
+
+
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>  Valores Enteros </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lstValores)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+    <div>
+        <h5></h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Pre Orden </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lstPreOrden)
+                {
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <h5></h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> In Orden </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lstInOrden)
+                {
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <h5></h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Post Orden </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lstPostOrden)
+                {
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Archivo json</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr>
+                    <td>
+                        @contenido2
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
