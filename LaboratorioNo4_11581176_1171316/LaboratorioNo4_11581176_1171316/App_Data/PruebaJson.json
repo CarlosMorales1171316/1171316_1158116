@@ -1,0 +1,19 @@
+[
+    {
+        "Peru": {
+            "faltantes": [ 0, 1, 2 ],
+            "coleccionadas": [ 3, 4, 5 ],
+            "cambios": [ 6, 7, 8 ]
+        },
+        "Brasil": {
+            "faltantes": [ 77, 71, 72 ],
+            "coleccionadas": [ 73, 74, 75 ],
+            "cambios": [ 76, 777, 78 ]
+        },
+        "Especial": {
+            "faltantes": [ 10, 11, 22 ],
+            "coleccionadas": [ 33, 34, 35 ],
+            "cambios": [ 46, 47, 48 ]
+        }
+    }
+]	

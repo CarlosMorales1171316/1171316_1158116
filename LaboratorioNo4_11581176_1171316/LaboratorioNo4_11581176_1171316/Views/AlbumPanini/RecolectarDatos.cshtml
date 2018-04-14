@@ -1,0 +1,494 @@
+﻿@using System;
+@using System.Collections.Generic;
+@using System.IO;
+@using System.Linq;
+@using System.Web;
+@using System.Web.Mvc;
+@using Newtonsoft.Json;
+@using LaboratorioNo4_11581176_1171316.Models;
+
+<h1>Mundial Rusia 2018</h1>
+<h3></h3>
+@using (Html.BeginForm("RecolectarDatos", "AlbumPanini", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="FileUpload" />
+    <br />
+    <input type="submit" name="Cargar Archivos" id="Submit" value="Upload" />
+}
+<h3></h3>
+
+
+@{
+
+    Directory.CreateDirectory(@"C:\LaboratorioNo4");
+    var ruta1 = @"C:\LaboratorioNo4\InformacionEstampasPeru.txt";
+    var ruta2 = @"C:\LaboratorioNo4\InformacionEstampasBrasil.txt";
+    var ruta3 = @"C:\LaboratorioNo4\InformacionEstampasEspeciales.txt";
+    var ruta4 = @"C:\LaboratorioNo4\InformacionEstampasaActualizadas.txt";
+    var ruta5 = @"C:\LaboratorioNo4\Condicion.txt";
+    string data = Convert.ToString(TempData["uploadResult"]);
+    string file = Convert.ToString(TempData["file"]);
+    List<string> Peru = new List<string>();
+    List<string> Brasil = new List<string>();
+    List<string> Especial = new List<string>();
+    string condicion1 = "";
+    Dictionary<string, Panini> PeruDictionary = new Dictionary<string, Panini>();
+    Dictionary<string, Panini> BrasilDictionary = new Dictionary<string, Panini>();
+    Dictionary<string, Panini> EspecialDictionary = new Dictionary<string, Panini>();
+    List<string> EstampasActualizadasCompletadas = new List<string>();
+    List<string> EstampasActualizadasFaltantes = new List<string>();
+    List<string> EstampasActualizadasCambio = new List<string>();
+    Dictionary<string, bool> especial1 = new Dictionary<string, bool>();
+    Dictionary<string, bool> especial2 = new Dictionary<string, bool>();
+    Dictionary<string, bool> especial3 = new Dictionary<string, bool>();
+    Dictionary<string, bool> especial4 = new Dictionary<string, bool>();
+    Dictionary<string, bool> especial5 = new Dictionary<string, bool>();
+    List<string> EstampasFaltantes = new List<string>();
+    List<string> EstampasCompletadas = new List<string>();
+
+    if (file.Length == 492)
+    {
+
+        var album = JsonConvert.DeserializeObject<List<Dictionary<string, Panini>>>(file);
+
+        for (int i = 0; i < album.Count; i++)
+        {
+            PeruDictionary.Add(album.ElementAt(i).ElementAt(0).Key, album.ElementAt(i).ElementAt(0).Value);
+            BrasilDictionary.Add(album.ElementAt(i).ElementAt(1).Key, album.ElementAt(i).ElementAt(1).Value);
+            EspecialDictionary.Add(album.ElementAt(i).ElementAt(2).Key, album.ElementAt(i).ElementAt(2).Value);
+        }
+        //Peru
+        Peru.Add(PeruDictionary.ElementAt(0).Key + " Faltantes");
+        for (int i = 0; i < PeruDictionary.ElementAt(0).Value.faltantes.Count; i++)
+        {
+            Peru.Add(PeruDictionary.ElementAt(0).Value.faltantes.ElementAt(i).ToString());
+        }
+        Peru.Add(PeruDictionary.ElementAt(0).Key + " Coleccionadas");
+        for (int i = 0; i < PeruDictionary.ElementAt(0).Value.coleccionadas.Count; i++)
+        {
+            Peru.Add(PeruDictionary.ElementAt(0).Value.coleccionadas.ElementAt(i).ToString());
+        }
+        Peru.Add(PeruDictionary.ElementAt(0).Key + " Cambios");
+        for (int i = 0; i < PeruDictionary.ElementAt(0).Value.cambios.Count; i++)
+        {
+            Peru.Add(PeruDictionary.ElementAt(0).Value.cambios.ElementAt(i).ToString());
+        }
+        //Brasil
+        Brasil.Add(BrasilDictionary.ElementAt(0).Key + " Faltantes");
+        for (int i = 0; i < BrasilDictionary.ElementAt(0).Value.faltantes.Count; i++)
+        {
+            Brasil.Add(BrasilDictionary.ElementAt(0).Value.faltantes.ElementAt(i).ToString());
+        }
+        Brasil.Add(BrasilDictionary.ElementAt(0).Key + " Coleccionadas");
+        for (int i = 0; i < BrasilDictionary.ElementAt(0).Value.coleccionadas.Count; i++)
+        {
+            Brasil.Add(BrasilDictionary.ElementAt(0).Value.coleccionadas.ElementAt(i).ToString());
+        }
+        Brasil.Add(BrasilDictionary.ElementAt(0).Key + " Cambios");
+        for (int i = 0; i < BrasilDictionary.ElementAt(0).Value.cambios.Count; i++)
+        {
+            Brasil.Add(BrasilDictionary.ElementAt(0).Value.cambios.ElementAt(i).ToString());
+        }
+        //Especial
+        Especial.Add(EspecialDictionary.ElementAt(0).Key + " Faltantes");
+        for (int i = 0; i < EspecialDictionary.ElementAt(0).Value.faltantes.Count; i++)
+        {
+            Especial.Add(EspecialDictionary.ElementAt(0).Value.faltantes.ElementAt(i).ToString());
+        }
+        Especial.Add(EspecialDictionary.ElementAt(0).Key + " Coleccionadas");
+        for (int i = 0; i < EspecialDictionary.ElementAt(0).Value.coleccionadas.Count; i++)
+        {
+            Especial.Add(EspecialDictionary.ElementAt(0).Value.coleccionadas.ElementAt(i).ToString());
+        }
+        Especial.Add(EspecialDictionary.ElementAt(0).Key + " Cambios");
+        for (int i = 0; i < EspecialDictionary.ElementAt(0).Value.cambios.Count; i++)
+        {
+            Especial.Add(EspecialDictionary.ElementAt(0).Value.cambios.ElementAt(i).ToString());
+        }
+        using (StreamWriter sw = new StreamWriter(ruta1))
+        {
+            for (int i = 0; i < Peru.Count; i++)
+            {
+                sw.WriteLine(Peru.ElementAt(i));
+            }
+            sw.Close();
+        }
+        using (StreamWriter sw = new StreamWriter(ruta2))
+        {
+            for (int i = 0; i < Brasil.Count; i++)
+            {
+                sw.WriteLine(Brasil.ElementAt(i));
+
+            }
+            sw.Close();
+        }
+        using (StreamWriter sw = new StreamWriter(ruta3))
+        {
+            for (int i = 0; i < Especial.Count; i++)
+            {
+                sw.WriteLine(Especial.ElementAt(i));
+
+            }
+            sw.Close();
+        }
+        using (StreamWriter sw = new StreamWriter(ruta5))
+        {
+            for (int i = 0; i < Especial.Count; i++)
+            {
+                sw.WriteLine("true");
+
+            }
+            sw.Close();
+        }
+
+    }
+
+    if (file.Length == 162)
+    {
+        if(System.IO.File.Exists(ruta5))
+        {
+            using (StreamReader leer = new StreamReader(ruta5))
+            {
+                int i = 0;
+                while (!leer.EndOfStream)
+                {
+                    string x = leer.ReadLine();
+                    condicion1 = (x);
+                    i++;
+                }
+            }
+
+            if (condicion1 == "true")
+            {
+                #region
+                var path2 = @"C:\PruebaJson2.json";
+                var contenidoCalcomanias = System.IO.File.ReadAllText(path2);
+
+                var calcomanias = JsonConvert.DeserializeObject<List<Dictionary<string, bool>>>(contenidoCalcomanias);
+
+                for (int i = 0; i < calcomanias.Count; i++)
+                {
+                    especial1.Add(calcomanias.ElementAt(i).ElementAt(0).Key, calcomanias.ElementAt(i).ElementAt(0).Value);
+                    especial2.Add(calcomanias.ElementAt(i).ElementAt(1).Key, calcomanias.ElementAt(i).ElementAt(1).Value);
+                    especial3.Add(calcomanias.ElementAt(i).ElementAt(2).Key, calcomanias.ElementAt(i).ElementAt(2).Value);
+                    especial4.Add(calcomanias.ElementAt(i).ElementAt(3).Key, calcomanias.ElementAt(i).ElementAt(3).Value);
+                    especial5.Add(calcomanias.ElementAt(i).ElementAt(4).Key, calcomanias.ElementAt(i).ElementAt(4).Value);
+                    if (especial1.ElementAt(i).Value == false)
+                    {
+                        string[] E = especial1.ElementAt(i).Key.Split('_');
+                        EstampasFaltantes.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                    }
+                    else
+                    {
+                        string[] E = especial1.ElementAt(i).Key.Split('_');
+                        EstampasCompletadas.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                        especial1.Remove(calcomanias.ElementAt(i).ElementAt(0).Key);
+                    }
+                    if (especial2.ElementAt(i).Value == false)
+                    {
+                        string[] E = especial2.ElementAt(i).Key.Split('_');
+                        EstampasFaltantes.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                    }
+                    else
+                    {
+                        string[] E = especial2.ElementAt(i).Key.Split('_');
+                        EstampasCompletadas.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                        especial2.Remove(calcomanias.ElementAt(i).ElementAt(0).Key);
+                    }
+                    if (especial3.ElementAt(i).Value == false)
+                    {
+                        string[] E = especial3.ElementAt(i).Key.Split('_');
+                        EstampasFaltantes.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                    }
+                    else
+                    {
+                        string[] E = especial3.ElementAt(i).Key.Split('_');
+                        EstampasCompletadas.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                        especial3.Remove(calcomanias.ElementAt(i).ElementAt(0).Key);
+                    }
+                    if (especial4.ElementAt(i).Value == false)
+                    {
+                        string[] E = especial4.ElementAt(i).Key.Split('_');
+                        EstampasFaltantes.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                    }
+                    else
+                    {
+                        string[] E = especial4.ElementAt(i).Key.Split('_');
+                        EstampasCompletadas.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                        especial4.Remove(calcomanias.ElementAt(i).ElementAt(0).Key);
+                    }
+                    if (especial5.ElementAt(i).Value == false)
+                    {
+                        string[] E = especial5.ElementAt(i).Key.Split('_');
+                        EstampasFaltantes.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                    }
+                    else
+                    {
+                        string[] E = especial5.ElementAt(i).Key.Split('_');
+                        EstampasCompletadas.Add("Estampa " + E[0] + ", Numero de Estampa: " + E[1]);
+                        especial5.Remove(calcomanias.ElementAt(i).ElementAt(0).Key);
+                    }
+
+                }
+                Pais mipais = new Pais();
+                using (StreamWriter sw = new StreamWriter(ruta4))
+                {
+                    sw.WriteLine("Estampas Completadas");
+                    for (int i = 0; i < EstampasCompletadas.Count; i++)
+                    {
+                        sw.WriteLine(EstampasCompletadas.ElementAt(i));
+                    }
+                    sw.WriteLine("Estampas Faltantes");
+                    for (int i = 0; i < EstampasFaltantes.Count; i++)
+                    {
+                        sw.WriteLine(EstampasFaltantes.ElementAt(i));
+                    }
+                    sw.Close();
+                }
+                #endregion
+
+                List<string> list1 = new List<string>();
+                List<string> list2 = new List<string>();
+                List<string> list3 = new List<string>();
+                List<string> list4 = new List<string>();
+                if (System.IO.File.Exists(ruta1) && System.IO.File.Exists(ruta2) && System.IO.File.Exists(ruta3) && System.IO.File.Exists(ruta4))
+                {
+                    using (StreamReader leer = new StreamReader(ruta1))
+                    {
+                        int i = 0;
+                        while (!leer.EndOfStream)
+                        {
+                            string x = leer.ReadLine();
+                            list1.Add(x);
+                            i++;
+                        }
+                    }
+                    using (StreamReader leer = new StreamReader(ruta2))
+                    {
+                        int i = 0;
+                        while (!leer.EndOfStream)
+                        {
+                            string x = leer.ReadLine();
+                            list2.Add(x);
+                            i++;
+                        }
+                    }
+                    using (StreamReader leer = new StreamReader(ruta3))
+                    {
+                        int i = 0;
+                        while (!leer.EndOfStream)
+                        {
+                            string x = leer.ReadLine();
+                            list3.Add(x);
+                            i++;
+                        }
+                    }
+                    using (StreamReader leer = new StreamReader(ruta4))
+                    {
+                        int i = 0;
+                        while (!leer.EndOfStream)
+                        {
+                            string x = leer.ReadLine();
+                            list4.Add(x);
+                            i++;
+                        }
+                    }
+
+                    //Peru
+                    EstampasActualizadasCompletadas.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(1));
+                    EstampasActualizadasCompletadas.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(5));
+                    EstampasActualizadasCompletadas.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(6));
+                    EstampasActualizadasCompletadas.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(7));
+                    EstampasActualizadasCompletadas.Add(" ");
+
+                    EstampasActualizadasFaltantes.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(2));
+                    EstampasActualizadasFaltantes.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(3));
+                    EstampasActualizadasFaltantes.Add(" ");
+
+                    EstampasActualizadasCambio.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(9));
+                    EstampasActualizadasCambio.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(10));
+                    EstampasActualizadasCambio.Add("Estampa Peru, Numero de Estampa: " + list1.ElementAt(11));
+                    EstampasActualizadasCambio.Add(" ");
+
+                    //Brasil
+                    EstampasActualizadasCompletadas.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(2));
+                    EstampasActualizadasCompletadas.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(5));
+                    EstampasActualizadasCompletadas.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(6));
+                    EstampasActualizadasCompletadas.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(7));
+                    EstampasActualizadasCompletadas.Add(" ");
+
+                    EstampasActualizadasFaltantes.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(1));
+                    EstampasActualizadasFaltantes.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(3));
+                    EstampasActualizadasFaltantes.Add(" ");
+
+                    EstampasActualizadasCambio.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(9));
+                    EstampasActualizadasCambio.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(10));
+                    EstampasActualizadasCambio.Add("Estampa Brasil, Numero de Estampa: " + list2.ElementAt(11));
+                    EstampasActualizadasCambio.Add(" ");
+
+
+                    //Especial
+                    EstampasActualizadasCompletadas.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(1));
+                    EstampasActualizadasCompletadas.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(5));
+                    EstampasActualizadasCompletadas.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(6));
+                    EstampasActualizadasCompletadas.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(7));
+
+                    EstampasActualizadasFaltantes.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(2));
+                    EstampasActualizadasFaltantes.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(3));
+
+                    EstampasActualizadasCambio.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(9));
+                    EstampasActualizadasCambio.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(10));
+                    EstampasActualizadasCambio.Add("Estampa Especial, Numero de Estampa: " + list3.ElementAt(11));
+
+                }
+            }
+        }
+    }
+}
+
+@if (file.Length == 492)
+{
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Album Panini - Listado estampas Peru </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Peru)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <h1></h1>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Album Panini - Listado estampas Brasil </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Brasil)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <h1></h1>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Album Panini - Listado estampas Especiales </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Especial)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    
+}
+
+@if (file.Length == 162)
+{
+    if (condicion1 == "true")
+    {
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Album Panini - Listado estampas Completadas </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in EstampasActualizadasCompletadas)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <h1></h1>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Album Panini - Listado estampas Faltantes </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in EstampasActualizadasFaltantes)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <h1></h1>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Album Panini - Listado estampas Cambio </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in EstampasActualizadasCambio)
+                {
+
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    }
+    else
+    {
+        <h5>No se ha agregado un archivo antes por lo que no existe un registro de cambio.</h5>
+    }
+}
