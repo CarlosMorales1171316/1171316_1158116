@@ -1,6 +1,0 @@
-c:\users\t204\documents\visual studio 2013\Projects\Lab_2\Lab_2\bin\Debug\Lab_2.exe.config
-c:\users\t204\documents\visual studio 2013\Projects\Lab_2\Lab_2\bin\Debug\Lab_2.exe
-c:\users\t204\documents\visual studio 2013\Projects\Lab_2\Lab_2\bin\Debug\Lab_2.pdb
-c:\users\t204\documents\visual studio 2013\Projects\Lab_2\Lab_2\obj\Debug\Lab_2.csprojResolveAssemblyReference.cache
-c:\users\t204\documents\visual studio 2013\Projects\Lab_2\Lab_2\obj\Debug\Lab_2.exe
-c:\users\t204\documents\visual studio 2013\Projects\Lab_2\Lab_2\obj\Debug\Lab_2.pdb
